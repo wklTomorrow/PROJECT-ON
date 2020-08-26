@@ -1,19 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import Vue from 'vue'
+import HelloWorld from './components/HelloWorld.vue';
+import textVal from './components/text.vue'
 
-export default {
+export default Vue.extend({
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    textVal
   }
-}
+})
 </script>
 
 <style>

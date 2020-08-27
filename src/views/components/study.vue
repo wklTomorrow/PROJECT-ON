@@ -15,11 +15,20 @@ export default Vue.extend({
     },
     computed: {
         ...mapState({
-            time: state => state,
+            times(state: any) {
+                return state.indexs.times
+            }
         })
     },
     mounted(): void {
-        console.log(this.time)
+        console.log(this.times)
+        this.getValue(100)
+        console.log(this.times)
+    },
+    methods: {
+        ...mapActions([
+            'getValue'
+        ])
     }
 })
 </script>

@@ -2,34 +2,38 @@
     <div>
         {{ content }}
         <button @click="onClick">点我</button>
+        <button @click="onAnother">另一种</button>
     </div>
 </template>
 <script lang="ts">
 import menu from '../utils/menu';
 import { Vue, Component } from 'vue-property-decorator'
 // import { mapState, mapActions, mapMutations } from 'vuex'
-import { State, Action, Getter ,Mutation } from "vuex-class";
 
 @Component({
 })
 export default class index extends Vue {
-    [x: string]: any;
     content: object[] = []
     get indexs() {
-        return this.$store.state.indexs.time
+        return this.$store.state.indexs.times
     }
     private created(): void {
         console.log(this.content)
         console.log(this.indexs)
+        this.$store.dispatch('getValue', 10)
     }
     private mounted(): void {
         this.content = menu.menu
-        console.log(this.$store.dispatch('getTime', 10))
         console.log(this.content, 'mounted')
+        console.log(this.indexs)
+        this.$store.commit('setTimesValue', 100)
         console.log(this.indexs)
     }
     public onClick(): void {
         this.$router.push({name: 'homePageHello'})
+    }
+    public onAnother(): void {
+        this.$router.push({name: 'study' })
     }
 }
 </script>

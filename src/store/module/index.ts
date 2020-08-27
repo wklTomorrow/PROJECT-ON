@@ -1,17 +1,23 @@
 import { ActionTree } from 'vuex';
-export const state: any = {
-    time: 1
+import * as types from '../module-types'
+interface MyState {
+    times: number,
+    name?: string
+}
+export const state: MyState = {
+    times: 1
 }
 export const actions: ActionTree<any, any> = {
-    async getTime({state, commit}, times: any) {
-        commit('setTime', times)
+    async getValue({state, commit}, times: any) {
+        commit('setTimesValue', times)
     }
 }
 export const mutations: any = {
-    setTime(state: any, value: any) {
-        state.time = value
+    setTimesValue(state: any, value: any) {
+        state.times = value
     }
 }
+types.TYPE
 export default {
     state,
     actions,

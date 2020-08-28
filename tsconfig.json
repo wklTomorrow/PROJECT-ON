@@ -7,7 +7,7 @@
         "esModuleInterop": true,
         "experimentalDecorators": true,
         "strictFunctionTypes": false
-    }
+    },
     // "compilerOptions": {
     //     "target": "esnext",
     //     "module": "esnext",

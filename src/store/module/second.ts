@@ -1,6 +1,10 @@
 import { ActionTree } from 'vuex';
 import * as types from '../module-types'
-export const state: any = {
+interface myState {
+    name: string,
+    value: string
+}
+export const state: myState = {
     name: 'wang',
     value: '100'
 }
@@ -14,7 +18,7 @@ export const mutations: any = {
         state.name = value
     }
 }
-types.TYPE
+
 export default {
     state,
     namespaced: true,

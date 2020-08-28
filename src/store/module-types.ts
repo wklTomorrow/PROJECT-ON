@@ -1,1 +1,5 @@
-export const TYPE: string = '111';
+const TYPE: string = '111';
+
+export default {
+    TYPE: TYPE
+}

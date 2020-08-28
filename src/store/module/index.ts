@@ -17,7 +17,7 @@ export const mutations: any = {
         state.times = value
     }
 }
-types.TYPE
+
 export default {
     state,
     actions,

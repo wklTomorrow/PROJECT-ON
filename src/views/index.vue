@@ -8,6 +8,7 @@
 <script lang="ts">
 import menu from '../utils/menu';
 import { Vue, Component } from 'vue-property-decorator'
+import bus from '../utils/bus'
 // import { mapState, mapActions, mapMutations } from 'vuex'
 
 @Component({
@@ -21,6 +22,9 @@ export default class index extends Vue {
         console.log(this.content)
         console.log(this.indexs)
         this.$store.dispatch('getValue', 10)
+        bus.$on('sendData', (e: string) => {
+            console.log(e)
+        })
     }
     private mounted(): void {
         this.content = menu.menu

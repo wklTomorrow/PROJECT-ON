@@ -4,6 +4,7 @@ Vue.use(Router)
 const homePage = () => import('../views/index.vue')
 const homePageHello = () => import('../views/components/index.vue')
 const study = () => import('../views/components/study.vue')
+
 export default new Router({
     routes: [
         {
